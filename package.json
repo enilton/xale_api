@@ -1,0 +1,30 @@
+{
+  "name": "xale_service",
+  "version": "1.0.0",
+  "description": "API Xale Cuidados Compartilhados",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://enilton@bitbucket.org/xale_desenvolvedores/xale_service.git"
+  },
+  "author": "Enilton Rastele",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/xale_desenvolvedores/xale_service#readme",
+  "dependencies": {
+    "cloudinary": "^1.13.2",
+    "cors": "^2.8.5",
+    "event-stream": "^4.0.1",
+    "express": "^4.16.4",
+    "moment": "^2.23.0",
+    "mongoose": "^5.4.0",
+    "mongoose-paginate": "^5.0.3",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
