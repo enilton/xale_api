@@ -41,6 +41,20 @@ const UsuarioSchema = new Schema ({
     cidade :{
         type:Number,
         select: true,
+    },
+
+    tarefas: [{
+        type: mongoose.Schema.ObjectId, ref: 'Tarefa'
+    }],
+
+    ativo: {
+        type: Boolean,
+        default: true,
+        select: true,
+    },
+
+    historicoAtualizacao : {
+        type: mongoose.Schema.ObjectId, ref: 'HistoricoUsuario'
     }
 });
 

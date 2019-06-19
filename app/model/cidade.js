@@ -9,10 +9,9 @@ const CidadeSchema = new Schema ({
         select: true,
     },
 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
+    estado : {
+        type: mongoose.Schema.ObjectId, ref: 'Estado'
+    }
 });
 
 module.exports = mongoose.model('Cidade',CidadeSchema);
