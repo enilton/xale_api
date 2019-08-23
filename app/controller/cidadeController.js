@@ -3,12 +3,12 @@ const Cidade = mongoose.model("Cidade");
 
 module.exports = {
     async buscarTodos(req, res){               
-        const cidades = await Cidade.find({ });       
+        const cidades = await Cidade.find({ }).populate('estado');       
         return res.json(cidades);
     },
     
     async detalhar(req,res){    
-        const cidade = await Cidade.findById(req.params.id);       
+        const cidade = await Cidade.findById(req.params.id).populate('estado');       
         return res.json(cidade);
     },
     
@@ -16,17 +16,5 @@ module.exports = {
        let cidade = req.body;           
        cidade = await Cidade.create(cidade); 
        return res.json(cidade);    
-    },
-
-    //ainda não vai ser usado na primeira release //usar put
-    async atualizar(req,res){
-        const cidade = await Cidade.findByIdAndUpdate(req.params.id, req.body, {new: true});
-        return res.json(cidade);
-    },
-   
-    //ainda não será usado na primeira release
-    async desativar (req, res){
-        const cidade = await Cidade.findByIdAndRemove(req.params.id);
-        return res.send();
-    },
+    },  
 };
