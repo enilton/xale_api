@@ -1,23 +1,19 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
 
-const EstadoSchema = new Schema ({
+const { Schema } = mongoose;
 
-    nome: {
-        type: String,
-        required: true,
-        select: true,
-    },
+const EstadoSchema = new Schema({
+  nome: {
+    type: String,
+    required: true,
+    select: true
+  },
 
-    sigla: {
-        type: String,
-        required: true,
-        select: true,
-    },
-
-    cidades: [{
-        type: mongoose.Schema.ObjectId, ref: 'Cidade'
-    }]
+  sigla: {
+    type: String,
+    required: true,
+    select: true
+  }
 });
 
-module.exports = mongoose.model('Estado',EstadoSchema);
+module.exports = mongoose.model("Estado", EstadoSchema);
